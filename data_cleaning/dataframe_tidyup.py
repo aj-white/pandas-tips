@@ -17,3 +17,15 @@ def clean_column_names(df: pd.DataFrame) -> pd.DataFrame:
     df.columns = new_column_names
     
     return df
+
+
+# Alternative method using method chaining how to apply a regex pattern
+
+import re
+
+pat = re.compile(r"[\s]")
+
+(
+    df
+    .rename(columns=lambda x: re.sub(pat, "_", x).replace(",", "").lower().strip())
+)
