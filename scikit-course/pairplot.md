@@ -56,6 +56,11 @@ sns.pairplot(df, hue='Species', vars=cols, kind='scatter', diag_kind='hist')
 ```
 ![image](https://github.com/aj-white/pandas-tips/assets/72359843/31a70e58-9837-475c-91be-fa72a28e2bea)
 
+If the scatter plots overlap you can increase the height of each subplot
+```pyton
+sns.pairplot(df, hue='Species', vars=cols, kind='scatter', diag_kind='hist', height=4)
+```
+
 It's also possible to change the markers for each group using [matplotlib marker codes](https://matplotlib.org/stable/api/markers_api.html)
 ```python
 sns.pairplot(df, hue='Species', vars=cols, kind="scatter", diag_kind='hist', markers=['o', 'p', '*'])
